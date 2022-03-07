@@ -1,4 +1,5 @@
 let btn = document.getElementById("enter");
+let btnReset = document.getElementById("reset-btn")
  
 function displayGroceries(){
   const items = document.getElementById("item").value;
@@ -12,8 +13,15 @@ function displayGroceries(){
     list.appendChild(li);
   }
 }
+function removeList() {
+  const list = document.getElementById("item-list");
+  while (list.hasChildNodes()) {
+    list.removeChild(list.firstChild);
+  }
+}
 
 btn.addEventListener('click' , displayGroceries);
 btn.addEventListener("click", function(event){
   event.preventDefault()
  })
+btnReset.addEventListener("click", removeList);
