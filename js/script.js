@@ -1,10 +1,12 @@
 let btn = document.getElementById("enter");
  
 function displayGroceries(){
-  let items = document.getElementById("item").value;
-  groceries = items.split(",");
-  for (let index = 0; index < groceries.length; index++) {
-    console.log(groceries[index].trim()); 
+  const items = document.getElementById("item").value;
+  itemSplits = items.split(",");
+  groceries = itemSplits.map(item => item.trim())
+  groceries = groceries.sort();
+  for (let i = 0; i < groceries.length; i++) {
+    console.log(groceries[i]); 
   }
 }
 
